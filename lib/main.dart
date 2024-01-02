@@ -13,15 +13,16 @@ class XylophoneApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Center(
-            child: TextButton(
-              onPressed: () async {
-                final player = AudioPlayer();
-                await player.setSource(AssetSource('note1.wav'));
-                print("Sound played");
-              },
-              child: const Text('Click Me'),
-            ),
+          child: TextButton(
+            style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.red)),
+            onPressed: () async {
+              final player = AudioPlayer();
+              await player.play(AssetSource('note3.wav'));
+              print("Sound played");
+            },
+            child: const Text('Click Me'),
           ),
         ),
       ),
