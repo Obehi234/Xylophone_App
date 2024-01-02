@@ -31,7 +31,7 @@ class XylophoneApp extends StatelessWidget {
                     MaterialStateProperty.all<Color>(Colors.orange)),
                 onPressed: () async {
                   final player = AudioPlayer();
-                  await player.play(AssetSource('note3.wav'));
+                  await player.play(AssetSource('note6.wav'));
                   print("Sound played");
                 },
                 child: const Text('Click Me'),
@@ -53,7 +53,7 @@ class XylophoneApp extends StatelessWidget {
                     MaterialStateProperty.all<Color>(Colors.green)),
                 onPressed: () async {
                   final player = AudioPlayer();
-                  await player.play(AssetSource('note3.wav'));
+                  await player.play(AssetSource('note4.wav'));
                   print("Sound played");
                 },
                 child: const Text('Click Me'),
@@ -64,7 +64,7 @@ class XylophoneApp extends StatelessWidget {
                     MaterialStateProperty.all<Color>(Colors.teal)),
                 onPressed: () async {
                   final player = AudioPlayer();
-                  await player.play(AssetSource('note3.wav'));
+                  await player.play(AssetSource('note5.wav'));
                   print("Sound played");
                 },
                 child: const Text('Click Me'),
@@ -75,7 +75,7 @@ class XylophoneApp extends StatelessWidget {
                     MaterialStateProperty.all<Color>(Colors.blue)),
                 onPressed: () async {
                   final player = AudioPlayer();
-                  await player.play(AssetSource('note3.wav'));
+                  await player.play(AssetSource('note6.wav'));
                   print("Sound played");
                 },
                 child: const Text('Click Me'),
@@ -86,7 +86,7 @@ class XylophoneApp extends StatelessWidget {
                     MaterialStateProperty.all<Color>(Colors.yellow)),
                 onPressed: () async {
                   final player = AudioPlayer();
-                  await player.play(AssetSource('note3.wav'));
+                  await player.play(AssetSource('note4.wav'));
                   print("Sound played");
                 },
                 child: const Text('Click Me'),
