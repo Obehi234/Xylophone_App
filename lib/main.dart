@@ -13,76 +13,50 @@ class XylophoneApp extends StatelessWidget {
     player.play(AssetSource('note$soundNumber.wav'));
   }
 
+  Expanded buildKey({required Color color, required int soundNumber}) {
+    return Expanded(
+      child: TextButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(color),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            const RoundedRectangleBorder(
+              borderRadius: BorderRadius.zero,
+            ),
+          ),
+        ),
+        onPressed: () async {
+          playSound(soundNumber);
+        },
+        child: const Text('Click Me'),
+      ),
+    );
+  }
+
 
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: SafeArea(
           child: Column(
-            children: [TextButton(
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.red)),
-              onPressed: () {
-                playSound(3);
-              },
-              child: const Text('Click Me'),
-            ),
-              TextButton(
-                style: ButtonStyle(
-                    backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.orange)),
-                onPressed: () {
-                  playSound(4);
-                }, child: const Text('Click Me'),
-              ),
-              TextButton(
-                style: ButtonStyle(
-                    backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.yellow)),
-                onPressed: () async {
-                  playSound(4);
-                },
-                child: const Text('Click Me'),
-              ),
-              TextButton(
-                style: ButtonStyle(
-                    backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.green)),
-                onPressed: () async {
-                  playSound(5);
-                },
-                child: const Text('Click Me'),
-              ),
-              TextButton(
-                style: ButtonStyle(
-                    backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.teal)),
-                onPressed: () async {
-                  playSound(6);
-                },
-                child: const Text('Click Me'),
-              ),
-              TextButton(
-                style: ButtonStyle(
-                    backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.blue)),
-                onPressed: () async {
-                  playSound(3);
-                },
-                child: const Text('Click Me'),
-              ),
-              TextButton(
-                style: ButtonStyle(
-                    backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.yellow)),
-                onPressed: () async {
-                  playSound(4);
-                },
-                child: const Text('Click Me'),
-              ),]
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              buildKey(color: Colors.red, soundNumber: 3),
+
+              buildKey(color: Colors.green, soundNumber: 4),
+
+              buildKey(color: Colors.blue, soundNumber: 5),
+
+              buildKey(color: Colors.purple, soundNumber: 6),
+
+              buildKey(color: Colors.teal, soundNumber: 3),
+
+              buildKey(color: Colors.yellow, soundNumber: 4),
+
+
+            ]
           ),
         ),
       ),
